@@ -7,6 +7,7 @@ import SimulationMaterial from './SimulationMaterial'
 import vertexParticles from "../Shaders/Particles/vertexParticles.glsl";
 import fragmentParticles from "../Shaders/Particles/fragmentParticles.glsl"; 
 import lighthouse from './LighthouseFull3.glb'
+import ray from './rayCopy.glb'
 import brush from '../assets/brush.png'
 import { useControls } from "leva";
 import { Perf } from "r3f-perf";
@@ -37,6 +38,8 @@ const FBOParticles = () => {
     const planeRef = useRef()
 
     const model = useLoader(GLTFLoader, lighthouse)
+
+    // console.log(model.scene.children[1].children[0])
 
     const max = 20
     const brushMeshes = []
@@ -179,7 +182,7 @@ const FBOParticles = () => {
 
   return (
     <>
-     <Perf position="top-left" />
+     {/* <Perf position="top-left" />s */}
     {/* rendering the off-screen simulation material and square geometry*/}
     {createPortal(
         <mesh  >
